@@ -148,13 +148,16 @@ for (let song of songs) {
   songTitle.innerHTML = song.title;
   artistName.innerHTML = song.artist;
   songDuration.innerHTML = song.duration;
-  songFavorite.innerHTML = song.liked ? "⭐ Favorite" : "";
+  songFavorite.innerHTML = song.liked ? "⭐ Favorite" : ""; // ternary operator
 
+  // add audio controls
   audioControlElement.controls = true;
   audioControlElement.src = song.audio;
 
+  // add img
   imageElement.src = song.image;
 
+  // append each song/audio/img element to DOM
   playlistElement.appendChild(songDivElement);
   songDivElement.appendChild(imageElement);
   songDivElement.appendChild(songTitle);
