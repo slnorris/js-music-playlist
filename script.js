@@ -167,3 +167,44 @@ for (let song of songs) {
   songDivElement.appendChild(audioControlElement);
 }
 
+// Filter button to show only liked songs
+let likedButtonElement = document.getElementById("liked-songs");
+likedButtonElement.addEventListener("click", likedButtonHandler);
+
+function likedButtonHandler(event) {
+  event.preventDefault();
+  playlistElement.innerHTML = "";
+  for (let song of songs) {
+    if (song.liked === true) {
+      const songDivElement = document.createElement("div");
+      const songTitle = document.createElement("h3");
+      const artistName = document.createElement("p");
+      const songDuration = document.createElement("p");
+      const songFavorite = document.createElement("p");
+      const audioControlElement = document.createElement("audio");
+      const imageElement = document.createElement("img");
+
+      songTitle.innerHTML = song.title;
+      artistName.innerHTML = song.artist;
+      songDuration.innerHTML = song.duration;
+      songFavorite.innerHTML = song.liked ? "⭐ Favorite" : "";
+
+      audioControlElement.controls = true;
+      audioControlElement.src = song.audio;
+
+      imageElement.src = song.image;
+
+      playlistElement.appendChild(songDivElement);
+      songDivElement.appendChild(imageElement);
+      songDivElement.appendChild(songTitle);
+      songDivElement.appendChild(artistName);
+      songDivElement.appendChild(songDuration);
+      songDivElement.appendChild(songFavorite);
+      songDivElement.appendChild(audioControlElement);
+
+      likedButtonElement.innerHTML = "View All Songs";
+    }
+  }
+}
+
+// *****************************************************************
