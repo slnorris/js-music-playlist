@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f0f4f8;
+    background: rgb(200, 213, 185);
     padding: 2rem;
     max-width: 700px;
     margin: auto;
@@ -13,8 +13,8 @@ body {
 
   
   .song {
-    background: #fff;
-    border: 1px solid #ddd;
+    background: rgba(143, 192, 169, .6);
+    border: 1px solid rgba(143, 192, 169, .6);
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 8px;
@@ -28,4 +28,35 @@ body {
   .song p {
     margin: 0.3rem 0;
     color: #555;
+  }
+
+  .song img {
+    border-radius: 20px;
+    float: left;
+    padding: 10px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .like-button {
+    background-color:#0077cc;
+    border: none;
+    margin: 15px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    padding: 13px 30px;
+    font-size: 16px;
+    border-radius: 20px;
+    transition-duration: .04s;
+  }
+
+  .like-button:hover {
+    background-color: white;
+    color: #0077cc;
+  }
+
+  .button-div {
+    padding: 10px;
+    text-align: center;
   }

@@ -138,6 +138,7 @@ const playlistElement = document.getElementById("playlist");
 for (let song of songs) {
   console.log(song);
   const songDivElement = document.createElement("div");
+  songDivElement.classList.add("song");
   const songTitle = document.createElement("h3");
   const artistName = document.createElement("p");
   const songDuration = document.createElement("p");
@@ -168,7 +169,7 @@ for (let song of songs) {
 }
 
 // Filter button to show only liked songs
-let likedButtonElement = document.getElementById("liked-songs");
+let likedButtonElement = document.getElementById("like-button");
 likedButtonElement.addEventListener("click", likedButtonHandler);
 
 function likedButtonHandler(event) {
@@ -177,6 +178,7 @@ function likedButtonHandler(event) {
   for (let song of songs) {
     if (song.liked === true) {
       const songDivElement = document.createElement("div");
+      songDivElement.classList.add("song");
       const songTitle = document.createElement("h3");
       const artistName = document.createElement("p");
       const songDuration = document.createElement("p");
@@ -206,5 +208,5 @@ function likedButtonHandler(event) {
     }
   }
 }
-
+// Attempting to make the button show the default list at this point
 // *****************************************************************
