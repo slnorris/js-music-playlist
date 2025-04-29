@@ -142,8 +142,8 @@ for (let song of songs) {
   const artistName = document.createElement("p");
   const songDuration = document.createElement("p");
   const songFavorite = document.createElement("p");
-  const audioControlElement = document.createElement("audio");
-  const imageElement = document.createElement("img");
+  const audioControlElement = document.createElement("audio"); // add audio controls
+  const imageElement = document.createElement("img"); // add img
 
   songTitle.innerHTML = song.title;
   artistName.innerHTML = song.artist;
@@ -159,12 +159,12 @@ for (let song of songs) {
 
   // append each song/audio/img element to DOM
   playlistElement.appendChild(songDivElement);
-  songDivElement.appendChild(imageElement);
   songDivElement.appendChild(songTitle);
   songDivElement.appendChild(artistName);
   songDivElement.appendChild(songDuration);
   songDivElement.appendChild(songFavorite);
-  songDivElement.appendChild(audioControlElement);
+  songDivElement.appendChild(imageElement); // add img
+  songDivElement.appendChild(audioControlElement); // add audio controls
 }
 
 // Filter button to show only liked songs
@@ -189,20 +189,22 @@ function likedButtonHandler(event) {
       songDuration.innerHTML = song.duration;
       songFavorite.innerHTML = song.liked ? "⭐ Favorite" : "";
 
+
       audioControlElement.controls = true;
       audioControlElement.src = song.audio;
 
       imageElement.src = song.image;
 
       playlistElement.appendChild(songDivElement);
-      songDivElement.appendChild(imageElement);
       songDivElement.appendChild(songTitle);
       songDivElement.appendChild(artistName);
       songDivElement.appendChild(songDuration);
       songDivElement.appendChild(songFavorite);
+      songDivElement.appendChild(imageElement);
       songDivElement.appendChild(audioControlElement);
 
       likedButtonElement.innerHTML = "View All Songs";
+      // Trying to get button to revert back to full list at this point
     }
   }
 }
