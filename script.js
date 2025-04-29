@@ -191,7 +191,6 @@ function likedButtonHandler(event) {
       songDuration.innerHTML = song.duration;
       songFavorite.innerHTML = song.liked ? "⭐ Favorite" : "";
 
-
       audioControlElement.controls = true;
       audioControlElement.src = song.audio;
 
